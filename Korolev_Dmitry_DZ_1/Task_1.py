@@ -1,26 +1,15 @@
 def secs_to_str(dur):
-    secs = int(dur)
-    mins = int(dur/60)
-    hours = int(dur/60/60)
-    days = int(dur/60/60/24)
+    min = 60
+    hour = min*60
+    day = hour*24
+    if dur in range(1, min):
+        return f'{dur} сек'
+    elif dur in range(min, hour):
+        return f'{dur//min} мин {dur%min} сек'
+    elif dur in range(hour, day):
+        return f'{dur//hour} час {(dur%hour)//min} мин {((dur%hour)%min)} сек'
+    elif dur >= day:
+        return f'{dur//day} дн {(dur%day)//hour} час {((dur%day)%hour)//min} мин {((dur%day)%hour)%min} сек'
 
-    if days:
-        d = dur // (60*60*24)
-        h = (dur - d * (60*60*24))//(60*60)
-        m = (dur - d * (60*60*24) - h * (60*60))//60
-        s = dur - d * (60*60*24) - h * (60*60) - m * 60
-        return f'{d} дн {h} час {m} мин {s} сек'
-    elif hours:
-        h = dur // (60*60)
-        m = (dur - h * (60*60))//60
-        s = dur - h * (60*60) - m * 60
-        return f'{h} час {m} мин {s} сек'
-    elif mins:
-        m = dur // 60
-        s = dur - m * 60
-        return f'{m} мин {s} сек'
-    elif secs:
-        return f'{secs} сек'
-
-# duration = 400153
-# print(secs_to_str(duration))
+duration = 400153
+print(secs_to_str(duration))
