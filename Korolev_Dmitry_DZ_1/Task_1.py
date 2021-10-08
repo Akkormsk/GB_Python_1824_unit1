@@ -11,5 +11,5 @@ def secs_to_str(dur):
     elif dur >= day:
         return f'{dur//day} дн {(dur%day)//hour} час {((dur%day)%hour)//min} мин {((dur%day)%hour)%min} сек'
 
-duration = 400153
-print(secs_to_str(duration))
+# duration = 400153
+# print(secs_to_str(duration))
