@@ -9,7 +9,7 @@ def summ_dev_7(my_str):
         for i in str(num):
             sum_i += int(i)
         if sum_i % 7 == 0:
-            sum_num += sum_i
+            sum_num += num
     return sum_num
 
 
@@ -21,7 +21,7 @@ def summ_dev_7_mod(my_str):
         for i in str(num):
             sum_i += int(i)
         if sum_i % 7 == 0:
-            sum_num += sum_i
+            sum_num += num
     return sum_num
 
 
