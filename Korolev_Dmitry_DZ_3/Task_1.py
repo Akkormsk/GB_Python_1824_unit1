@@ -11,7 +11,8 @@ dictionary = {
     'ten' : 'десять',
 }
 
-def num_translate(num):
-    return dictionary.get(num)
+def num_translate_adv(num):
+    res = str(dictionary.get(num.lower())).capitalize() if num.istitle() else dictionary.get(num)
+    return res
 
-print(num_translate('six'))
+print(num_translate_adv('Six'))
