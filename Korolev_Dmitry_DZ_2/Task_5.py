@@ -7,7 +7,7 @@ for price in price_list:
     kop = str(round(price%1*100))
     if len(kop) == 1:
         kop = '0' + kop
-    print(f'{rub} руб {kop} коп')
+    print(f'{rub} руб {kop} коп', end=', ')
 print(id(price_list), price_list)
 price_list.sort()
 print(id(price_list), price_list)
