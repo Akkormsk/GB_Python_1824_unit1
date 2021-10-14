@@ -17,4 +17,4 @@ def num_translate_adv(num):
     return res
 
 
-print(num_translate_adv('Six'))
+print(num_translate_adv('Five'))
