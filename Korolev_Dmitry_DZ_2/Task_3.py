@@ -8,8 +8,9 @@ for i in enumerate(task_list[:]):
             num_list = list(task_list[i[0]+n])
             num_list.insert(-1, '0')
             task_list[i[0]+n] = ''.join(num_list)
-        task_list.insert(i[0]+n, '"')
-        task_list.insert(i[0]+2+n, '"')
-        n = n+2
+            task_list[i[0] + n] = f'"{task_list[i[0]+n]}"'
+        # task_list.insert(i[0]+n, '"')
+        # task_list.insert(i[0]+2+n, '"')
+        # n = n+2
 
 print(' '.join(task_list))
