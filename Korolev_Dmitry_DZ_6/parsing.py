@@ -32,7 +32,12 @@ def parsing(args):
         json.dump(res_dict, f_3)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
+    import sys
+
+    parsing(sys.argv)
     with open('dict_file_5.txt', 'r', encoding='utf-8') as f_3:
         dict_test = json.load(f_3)
         print(dict_test)
+
+# python parsing.py users.csv hobby.csv dict_file_5.txt
