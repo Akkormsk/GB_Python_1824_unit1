@@ -2,7 +2,7 @@ def val_checker(cb_func):
     def my_decorator(my_func):
         def wrapper(*args, **kwargs):
             if not cb_func(*args, **kwargs):
-                raise ValueError('Input positive number')
+                raise ValueError('Ошибка ввода. Введите положительное число')
             return my_func(*args, **kwargs)
         return wrapper
 
@@ -15,4 +15,10 @@ def calc_cube(n):
 
 
 if __name__ == '__main__':
-    print(calc_cube(5))
+    import sys
+
+    try:
+        print(calc_cube(int(sys.argv[1])))
+    except (ValueError, SyntaxError) as e:
+        print(e)
+        print(f'Повторите ввод')
