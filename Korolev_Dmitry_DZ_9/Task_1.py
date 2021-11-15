@@ -3,11 +3,11 @@ import time
 
 
 class TrafficLight:
-    color = ['red', 'yellow', 'green']
+    __color = ['red', 'yellow', 'green']
 
-    def __running(self):
+    def running(self):
         print('Start')
-        cyc_col = cycle(self.color)
+        cyc_col = cycle(self.__color)
         cyc_time = cycle([7, 2, 3])
         while True:
             print(next(cyc_col))
@@ -15,4 +15,5 @@ class TrafficLight:
 
 
 a = TrafficLight()
-a._TrafficLight__running()
+a.running()
+
