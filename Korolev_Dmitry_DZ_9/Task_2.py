@@ -1,11 +1,11 @@
 class Road:
     def __init__(self, length, width, layer=5):
-        self._width = width
-        self._length = length
+        self.__width = width
+        self.__length = length
         self.layer = layer
 
     def value(self):
-        return self._width * self._length * self.layer * 25
+        return self.__width * self.__length * self.layer * 25
 
 
 r = Road(5000, 20)
