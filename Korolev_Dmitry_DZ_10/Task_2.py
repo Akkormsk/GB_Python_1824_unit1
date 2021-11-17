@@ -4,11 +4,11 @@ from abc import ABC, abstractmethod
 class Clothes(ABC):
     @abstractmethod
     def size(self):
-        pass
+        return self._size
 
     @abstractmethod
     def consumption(self):
-        pass
+        return f'{round(self._size / 6.5 + 0.5, 1)}'
 
 
 class Coat(Clothes):
