@@ -1,7 +1,21 @@
+from numbers import Number
+
 class Complex:
     def __init__(self, re, im):
         self.re = re
         self.im = im
+
+    @property
+    def re(self):
+        return self._re
+
+    @re.setter
+    def re(self, val):
+        if isinstance(val, Number):
+            self._re = val
+        else:
+            print('Повторите ввод числа')
+            self._re = 0
 
     def __add__(self, other):
         return Complex(self.re + other.re, self.im + other.im)
@@ -32,3 +46,6 @@ print(a / b)
 # c = 3 + 4j
 # d = 4 - 5j
 # # print(c/d)
+
+c = Complex('a', 3)
+print(a + c)

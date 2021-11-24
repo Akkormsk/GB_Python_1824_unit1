@@ -29,7 +29,6 @@ class Warehouse:
             print('Количество введите числом! По умолчанию принято за 0')
             self._number = 0
 
-
     def import_good(self, good, number):
         self.number = number
         good = list(globals().keys())[list(globals().values()).index(good)]
